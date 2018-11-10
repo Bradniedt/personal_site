@@ -21,7 +21,7 @@ class PersonalSite
     render_view('error.html', '404')
   end
 
-  def render_view(page, code = '200')
+  def self.render_view(page, code = '200')
     [code, {'Content-Type' => 'text/html'}, [File.read("./app/views/#{page}")]]
   end
 end
